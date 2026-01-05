@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Wish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ✅ Birthday Song -->
+<audio id="bdayMusic" src="bdy.mp3" type="audio/mpeg"></audio>
+
+<div class="container" id="wishContainer">
+  <h1>🎂 Birthday Wishes 🎉</h1>
+  <input type="text" id="nameInput" placeholder="Enter Name"><br><br>
+  <input type="date" id="dobInput"><br><br>
+  <button onclick="showWish()">Wish Now</button>
+
+  <h2 id="wishMessage"></h2>
+  <centre>
+  <img id="bdayPic" src="passch.jpg" alt="Birthday Pic" style="display: none; width: 250px; border-radius: 20px; margin-top: 15px;">
+  </centre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+body.bg-active {
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center top;
+  background-attachment: fixed;
+  padding-top: 100px;  
+}
+
+.container {
+  background-color: rgba(152, 102, 102, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  margin: 80px auto;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
