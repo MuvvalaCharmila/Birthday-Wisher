@@ -4,32 +4,36 @@ function showWish() {
 
   var wishMessage = document.getElementById("wishMessage");
   var image = document.getElementById("bdayPic");
-  image.style.display = "none";
+
   wishMessage.innerText = "";
+  image.style.display = "none";
 
   if (name === "" || dob === "") {
     alert("Please enter name and date");
     return;
   }
+  var parts = dob.split("-");
+  var enteredMonth = parts[1];
+  var enteredDate = parts[2];  
   var today = new Date();
   var todayMonth = String(today.getMonth() + 1).padStart(2, "0");
   var todayDate = String(today.getDate()).padStart(2, "0");
 
-  var enteredMonth = dob.split("-")[1];
-  var enteredDate = dob.split("-")[2];
+  var isToday =
+    enteredMonth === todayMonth && enteredDate === todayDate;
 
-  if (enteredMonth !== todayMonth || enteredDate !== todayDate) {
-    alert("Please enter today's date to get birthday wish");
+  var isCharmiDob =
+    name === "charmi" && enteredMonth === "09" && enteredDate === "20";
+  if (!isToday && !isCharmiDob) {
+    alert("Please enter valid date");
     return;
   }
-
   wishMessage.innerText =
     "🎉 Happy Birthday " + name + "! 🎂 Wishing you a joyful and blessed year ahead!";
 
   document.body.classList.add("bg-active");
   document.getElementById("bdayMusic").play();
-
-  if (name === "charmi" && enteredMonth === "09" && enteredDate === "20") {
+  if (isCharmiDob) {
     image.style.display = "block";
   }
 }
